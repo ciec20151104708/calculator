@@ -8,41 +8,105 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
-   
+    
+    var flag:String = "0"
+    var s:String = ""
+    var y:String = ""
+    var second:Bool = false
     @IBOutlet weak var x: UITextField!
-    @IBOutlet weak var y: UITextField!
-    @IBOutlet weak var z: UITextField!
-    @IBAction func one(_ sender: Any) {
+   
+    @IBAction func one(_ sender: UIButton) {
+        x.text = x.text! + "1"
+    }
+
+    @IBAction func two(_ sender: UIButton) {
+        x.text = x.text! + "2"
+    }
+    @IBAction func three(_ sender: UIButton) {
+        x.text = x.text! + "3"
+    }
+    @IBAction func four(_ sender: UIButton) {
+        x.text = x.text! + "4"
+    }
+    @IBAction func five(_ sender: UIButton) {
+        x.text = x.text! + "5"
+    }
+    @IBAction func six(_ sender: UIButton) {
+        x.text = x.text! + "6"
+    }
+    @IBAction func seven(_ sender: UIButton) {
+        x.text = x.text! + "7"
+    }
+    @IBAction func eight(_ sender: UIButton) {
+        x.text = x.text! + "8"
+    }
+    @IBAction func nine(_ sender: UIButton) {
+        x.text = x.text! + "9"
+    }
+    @IBAction func zero(_ sender: UIButton) {
+        x.text = x.text! + "0"
+    }
+    @IBAction func point(_ sender: UIButton) {
+        x.text = x.text! + "."
         
     }
-    @IBAction func two(_ sender: Any) {
+    @IBAction func add(_ sender: UIButton) {
+        s = x.text!
+        x.text=""
+        flag = "+"
+       
     }
-    @IBAction func three(_ sender: Any) {
+    @IBAction func subtract(_ sender: UIButton) {
+        s = x.text!
+        x.text=""
+        flag = "-"
     }
-    @IBAction func four(_ sender: Any) {
+    @IBAction func multiply(_ sender: UIButton) {
+        s = x.text!
+        x.text=""
+        flag = "*"
     }
-    @IBAction func five(_ sender: Any) {
+    @IBAction func divide(_ sender: UIButton) {
+        s = x.text!
+        x.text=""
+        flag = "/"
+         y = x.text!
     }
-    @IBAction func six(_ sender: Any) {
+    @IBAction func value(_ sender: Any) {
+   
+        switch flag {
+        case "+":
+            var temp:Double
+            temp = Double(s)! + Double(x.text!)!
+            x.text="\(temp)"
+            
+        case "-":
+            var temp: Double
+            temp = Double(s)! - Double(x.text!)!
+            x.text = "\(temp)"
+            
+        case "*":
+            var temp: Double
+            temp = Double(s)! * Double(x.text!)!
+            x.text = "\(temp)"
+            
+        case "/":
+            var temp: Double
+            temp = Double(s)! / Double(x.text!)!
+            x.text = "\(temp)"
+        default:
+            x.text = x.text
+        }
     }
-    @IBAction func seven(_ sender: Any) {
-    }
-    @IBAction func eight(_ sender: Any) {
-    }
-    @IBAction func nine(_ sender: Any) {
-    }
-    @IBAction func zero(_ sender: Any) {
-    }
-    @IBAction func add(_ sender: Any) {
 
+    @IBAction func del(_ sender: Any) {
+          x.text = ""
     }
-    @IBAction func subtract(_ sender: Any) {
-    }
-    @IBAction func multiply(_ sender: Any) {
-    }
-    @IBAction func divide(_ sender: Any) {
-    }
+   
+
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
